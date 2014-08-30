@@ -1,15 +1,26 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Nancy.Blog.Example</title>
-    <link href="~/Content/css/pure-min.css" rel="stylesheet" />
-  </head>
-  <body>
-    <main>
-      <h1>@Model.Blog.Title</h1>
-      
+<head>
+  <meta charset="utf-8" />
+  <title>Nancy.Blog.Example</title>
+  <link href="~/Content/css/pure-min.css" rel="stylesheet" />
+  <link href="~/Content/css/blog.css" rel="stylesheet" />
+</head>
+<body>
+  <div>
+    <h1>@Model.Blog.Title</h1>
 
-    </main>
-  </body>
+    <section>
+      @foreach (var post in @Model.Blog.Posts)
+      {
+        <article>
+          <h2>@post.Title</h2>
+          <div>
+            @post.Text
+          </div>
+        </article>
+      }
+    </section>
+  </div>
+</body>
 </html>
