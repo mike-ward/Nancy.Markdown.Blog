@@ -8,7 +8,8 @@ namespace Nancy.Blog.Example
     {
         public IndexModule(IndexModel model)
         {
-            Get["/"] = parameters => View[model];
+            Get["/"] = p => View[model];
+            Get["/rss"] = p => model.Blog.Rss();
         }
     }
 }
