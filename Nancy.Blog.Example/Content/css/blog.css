@@ -4,6 +4,7 @@
   margin-right: auto;
 }
 
-h1 {
-  text-align: center;
+article {
+  margin-bottom: 1pc;
+  border-bottom: black double;
 }

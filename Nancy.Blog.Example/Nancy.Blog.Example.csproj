@@ -85,6 +85,8 @@
     <Content Include="packages.config" />
     <Content Include="Views\index.cshtml" />
     <Content Include="App_Data\Blog\FirstSamplePost.20140812.md" />
+    <Content Include="App_Data\Blog\SecondSamplePost.20140813.md" />
+    <Content Include="App_Data\Blog\ThirdSamplePost.20140818.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
