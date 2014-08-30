@@ -5,6 +5,8 @@
 }
 
 article {
-  margin-bottom: 1pc;
+  margin-bottom: 4pc;
   border-bottom: black double;
 }
+
+.hljs { background-color: #f6f6f9; font-size: 11pt; }

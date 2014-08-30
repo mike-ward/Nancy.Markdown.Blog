@@ -1,10 +1,7 @@
 ﻿#Some Markdown Tests
 
-Heading
-=======
-
-Sub-heading
------------
+###Sub-heading
+***
  
 h3. Traditional html title
 

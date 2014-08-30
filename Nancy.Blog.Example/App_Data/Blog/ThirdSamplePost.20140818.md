@@ -23,34 +23,36 @@ A bit of text to explain.
 
 And then some more code.
 
-    using System.Linq;
-    using Nancy.Bootstrapper;
-    using Nancy.TinyIoc;
+~~~
+using System.Linq;
+using Nancy.Bootstrapper;
+using Nancy.TinyIoc;
 
-    namespace Nancy.Blog.Example
+namespace Nancy.Blog.Example
+{
+    using Nancy;
+
+    public class Bootstrapper : DefaultNancyBootstrapper
     {
-        using Nancy;
-
-        public class Bootstrapper : DefaultNancyBootstrapper
+        protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
         {
-            protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
-            {
-                var blog = new Blog();
-                var rootPath = container.Resolve<IRootPathProvider>().GetRootPath();
+            var blog = new Blog();
+            var rootPath = container.Resolve<IRootPathProvider>().GetRootPath();
 
-                blog.Posts = Directory.GetFiles(Path.Combine(rootPath, "App_Data/Blog/"), "*.md")
-                    .Select(file =>
+            blog.Posts = Directory.GetFiles(Path.Combine(rootPath, "App_Data/Blog/"), "*.md")
+                .Select(file =>
+                {
+                    using (var f = File.OpenRead(file))
                     {
-                        using (var f = File.OpenRead(file))
-                        {
-                            return Post.Read(f);
-                        }
-                    })
-                    .ToArray();
+                        return Post.Read(f);
+                    }
+                })
+                .ToArray();
 
-                container.Register<IBlog>(blog);
-            }
+            container.Register<IBlog>(blog);
         }
     }
+}
+~~~
 
 The End
