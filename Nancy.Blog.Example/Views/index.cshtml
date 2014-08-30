@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Linq
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -11,12 +12,12 @@
     <h1>@Model.Blog.Title</h1>
 
     <section>
-      @foreach (var post in @Model.Blog.Posts)
+      @foreach (var post in Enumerable.Take(Enumerable.Skip(Model.Blog.Posts, 0), 4))
       {
         <article>
           <h2>@post.Title</h2>
           <div>
-            @post.Text
+            @Html.Raw(post.Html())
           </div>
         </article>
       }
