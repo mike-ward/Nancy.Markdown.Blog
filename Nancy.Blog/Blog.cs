@@ -10,7 +10,7 @@ namespace Nancy.Blog
         public Blog()
         {
             Title = "Sample Blog";
-            Posts = new [] {new Post()};
+            Posts = new[] {new Post()};
         }
     }
 }

@@ -84,6 +84,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Views\index.cshtml" />
+    <Content Include="App_Data\Blog\FirstSamplePost.20140812.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
