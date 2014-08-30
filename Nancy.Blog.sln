@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.Blog", "Nancy.Blog\Nancy.Blog.csproj", "{F44D2FFA-0EEC-4C57-8757-53190529C24D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.Blog.Example", "Nancy.Blog.Example\Nancy.Blog.Example.csproj", "{B4F9C525-5C56-440E-B4C2-972A33D7C8CD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F44D2FFA-0EEC-4C57-8757-53190529C24D} = {F44D2FFA-0EEC-4C57-8757-53190529C24D}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

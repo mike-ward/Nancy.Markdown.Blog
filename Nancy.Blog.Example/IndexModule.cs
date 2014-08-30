@@ -1,15 +1,14 @@
-﻿namespace Nancy.Blog.Example
+﻿using Nancy.Blog.Example.Models;
+
+namespace Nancy.Blog.Example
 {
     using Nancy;
 
     public class IndexModule : NancyModule
     {
-        public IndexModule()
+        public IndexModule(IndexModel model)
         {
-            Get["/"] = parameters =>
-            {
-                return View["index"];
-            };
+            Get["/"] = parameters => View[model];
         }
     }
 }
