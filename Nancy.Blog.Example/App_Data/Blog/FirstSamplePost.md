@@ -1,7 +1,5 @@
-﻿Everything ignored up to first line that starts with a #
-Notes can go here.
-
-# Title of My First Post
+﻿# Title of My First Post
+2014-08-12
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. 
 Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. 

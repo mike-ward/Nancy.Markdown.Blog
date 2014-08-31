@@ -22,6 +22,7 @@
           <div>
             @Html.Raw(post.Html())
           </div>
+          <div class="blog-date">@post.Created.ToString("d MMM yyyy")</div>
         </article>
       }
     </section>

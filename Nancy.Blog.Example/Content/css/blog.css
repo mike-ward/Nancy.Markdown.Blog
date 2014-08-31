@@ -9,4 +9,14 @@ article {
   border-bottom: black double;
 }
 
-.hljs { background-color: #f6f6f9; font-size: 11pt; }
+.hljs {
+  background-color: #f6f6f9;
+  font-size: 11pt;
+}
+
+
+.blog-date {
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: 1pc;
+}
