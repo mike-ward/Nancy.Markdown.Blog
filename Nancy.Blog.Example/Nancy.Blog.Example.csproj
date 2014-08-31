@@ -87,6 +87,8 @@
     <Content Include="App_Data\Blog\FirstSamplePost.md" />
     <Content Include="App_Data\Blog\SecondSamplePost.md" />
     <Content Include="App_Data\Blog\ThirdSamplePost.md" />
+    <Content Include="App_Data\Blog\FourthSampelPost.md" />
+    <Content Include="App_Data\Blog\FifthSamplePost.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
