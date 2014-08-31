@@ -23,8 +23,7 @@ namespace Nancy.Blog.Example
             var rootPath = container.Resolve<IRootPathProvider>().GetRootPath();
 
             blog.Posts = Directory.GetFiles(Path.Combine(rootPath, "App_Data/Blog/"), "*.md")
-                .Select(file => Post.Read(File.OpenRead(file)))
-                .ToArray();
+                .Select(file => Post.Read(File.OpenRead(file)));
 
             container.Register<IBlog>(blog);
         }

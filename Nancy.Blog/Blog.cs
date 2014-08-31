@@ -14,7 +14,7 @@ namespace Nancy.Blog
         public Uri BaseUri { get; set; }
         public string Copyright { get; set; }
         public string Langauge { get; set; }
-        public IEnumerable<Post> Posts { get; set; }
+        private IEnumerable<Post> _posts; 
 
         public Blog()
         {
@@ -25,6 +25,12 @@ namespace Nancy.Blog
             Copyright = "Copyright 2014";
             Langauge = "en-US";
             Posts = new[] {new Post()};
+        }
+
+        public IEnumerable<Post> Posts
+        {
+            get { return _posts; }
+            set { _posts = value.OrderByDescending(p => p.Created).ToArray(); } 
         }
 
         public RssResponse Rss()
