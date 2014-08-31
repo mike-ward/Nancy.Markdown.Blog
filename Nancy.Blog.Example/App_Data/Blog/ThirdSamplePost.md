@@ -1,7 +1,7 @@
 ﻿# Some Code Examples
 2014-08-18
 
-Here's some code:
+Indent by 4 spaces to show code:
 
     using System.Collections.Generic;
     
@@ -20,9 +20,7 @@ Here's some code:
         }
     }
 
-A bit of text to explain.
-
-And then some more code.
+Or use code fences:
 
 ~~~
 using System.Linq;
