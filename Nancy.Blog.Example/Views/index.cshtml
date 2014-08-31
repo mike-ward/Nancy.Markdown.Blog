@@ -1,4 +1,5 @@
-﻿@using System.Linq
+﻿@using System
+@using System.Linq
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@
     <h1>@Model.Blog.Title</h1>
 
     <section>
-      @foreach (var post in Enumerable.Take(Enumerable.Skip(Model.Blog.Posts, 0), 4))
+      @foreach (var post in Enumerable.Take(Enumerable.Skip(Model.Blog.Posts, ViewBag.Page), 3))
       {
         <article>
           <h2>@post.Title</h2>
@@ -25,6 +26,7 @@
           <div class="blog-date">@post.Created.ToString("d MMM yyyy")</div>
         </article>
       }
+      <p><a href="@ViewBag.Prev">pevious</a>  | <a href="@ViewBag.Next">next</a></p>
     </section>
   </div>
 </body>
