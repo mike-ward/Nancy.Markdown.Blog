@@ -34,8 +34,8 @@ namespace Nancy.Blog.Example
             Context.ViewBag.PageLength = pageLength;
             var index = model.Blog.IndexFromSlug(slug);
             Context.ViewBag.Index = index;
-            Context.ViewBag.Prev = model.Blog.Posts.ElementAt(Math.Max(0, index - 1)).Slug;
-            Context.ViewBag.Next = model.Blog.Posts.ElementAt(Math.Min(model.Blog.Posts.Count() - 1, index + 1)).Slug;
+            Context.ViewBag.Prev = model.Blog.Posts.ElementAt(Math.Max(0, index - pageLength)).Slug;
+            Context.ViewBag.Next = model.Blog.Posts.ElementAt(Math.Min(model.Blog.Posts.Count() - 1, index + pageLength)).Slug;
             return View[model];
         }
 
