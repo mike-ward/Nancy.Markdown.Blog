@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/mike-ward/Nancy.Pile/blob/master/Nancy.Pile/license.md</licenseUrl>
+    <projectUrl>https://github.com/mike-ward/Nancy.Blog</projectUrl>
+    <iconUrl>http://nancyfx.org/nancy-nuget.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Initial Release.</releaseNotes>
+    <copyright>Copyright 2014, Mike Ward</copyright>
+    <tags>Nancy NancyFx</tags>
+  </metadata>
+</package>
