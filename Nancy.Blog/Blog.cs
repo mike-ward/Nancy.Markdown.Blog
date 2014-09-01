@@ -14,7 +14,7 @@ namespace Nancy.Blog
         public Uri BaseUri { get; set; }
         public string Copyright { get; set; }
         public string Langauge { get; set; }
-        private IEnumerable<Post> _posts; 
+        private IEnumerable<Post> _posts;
 
         public Blog()
         {
@@ -30,7 +30,11 @@ namespace Nancy.Blog
         public IEnumerable<Post> Posts
         {
             get { return _posts; }
-            set { _posts = value.OrderByDescending(p => p.Created).ToArray(); } 
+            set
+            {
+                _posts = value.OrderByDescending(p => p.Created).ToArray();
+                foreach (var post in _posts) post.PermaLink = PermaLink(post);
+            }
         }
 
         public RssResponse Rss()
@@ -58,7 +62,19 @@ namespace Nancy.Blog
 
         public string PermaLink(Post post)
         {
-            return BaseUri + post.Slug();
+            return BaseUri + post.Slug;
+        }
+
+        public Post PostFromSlug(string slug)
+        {
+            return Posts.FirstOrDefault(p => slug.Equals(p.Slug, StringComparison.InvariantCultureIgnoreCase));
+        }
+
+        public int IndexFromSlug(string slug)
+        {
+            return Posts
+                .Select((post, index) => new {post, index})
+                .First(a => slug.Equals(a.post.Slug, StringComparison.InvariantCultureIgnoreCase)).index;
         }
     }
 }

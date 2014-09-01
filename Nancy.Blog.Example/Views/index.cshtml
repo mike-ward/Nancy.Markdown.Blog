@@ -16,7 +16,7 @@
     <h1>@Model.Blog.Title</h1>
 
     <section>
-      @foreach (var post in Enumerable.Take(Enumerable.Skip(Model.Blog.Posts, ViewBag.Page), 3))
+      @foreach (var post in Enumerable.Take(Enumerable.Skip(Model.Blog.Posts, ViewBag.Index), ViewBag.PageLength))
       {
         <article>
           <h2><a href="@Model.Blog.PermaLink(post)">@post.Title</a></h2>
@@ -26,7 +26,7 @@
           <div class="blog-date">@post.Created.ToString("d MMM yyyy")</div>
         </article>
       }
-      <p><a href="@ViewBag.Prev">pevious</a>  | <a href="@ViewBag.Next">next</a></p>
+      <p><a href="@ViewBag.Prev">previous</a>  | <a href="@ViewBag.Next">next</a></p>
     </section>
   </div>
 </body>

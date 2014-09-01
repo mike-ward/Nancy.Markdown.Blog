@@ -14,5 +14,6 @@ namespace Nancy.Blog
         IEnumerable<Post> Posts { get; set; }
         RssResponse Rss();
         string PermaLink(Post post);
+        int IndexFromSlug(string slug);
     }
 }
