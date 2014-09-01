@@ -72,9 +72,11 @@ namespace Nancy.Blog
 
         public int IndexFromSlug(string slug)
         {
-            return Posts
+            var p = Posts
                 .Select((post, index) => new {post, index})
-                .FirstOrDefault(a => slug.Equals(a.post.Slug, StringComparison.InvariantCultureIgnoreCase)).index;
+                .FirstOrDefault(a => slug.Equals(a.post.Slug, StringComparison.InvariantCultureIgnoreCase));
+
+            return (p != null) ? p.index : 0;
         }
     }
 }
