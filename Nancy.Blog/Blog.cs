@@ -74,7 +74,7 @@ namespace Nancy.Blog
         {
             return Posts
                 .Select((post, index) => new {post, index})
-                .First(a => slug.Equals(a.post.Slug, StringComparison.InvariantCultureIgnoreCase)).index;
+                .FirstOrDefault(a => slug.Equals(a.post.Slug, StringComparison.InvariantCultureIgnoreCase)).index;
         }
     }
 }

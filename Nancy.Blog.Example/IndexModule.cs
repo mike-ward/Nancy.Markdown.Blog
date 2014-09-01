@@ -23,8 +23,8 @@ namespace Nancy.Blog.Example
             const int pageLength = 3;
             Context.ViewBag.Index = index;
             Context.ViewBag.PageLength = pageLength;
-            Context.ViewBag.Prev = Math.Max(index - pageLength, 0);
-            Context.ViewBag.Next = Math.Min(model.Blog.Posts.Count() - 1, index + pageLength);
+            Context.ViewBag.Prev = model.Blog.BaseUri + Math.Max(index - pageLength, 0).ToString(CultureInfo.InvariantCulture);
+            Context.ViewBag.Next = model.Blog.BaseUri + Math.Min(model.Blog.Posts.Count() - 1, index + pageLength).ToString(CultureInfo.InvariantCulture);
             return View[model];
         }
 
@@ -34,8 +34,8 @@ namespace Nancy.Blog.Example
             Context.ViewBag.PageLength = pageLength;
             var index = model.Blog.IndexFromSlug(slug);
             Context.ViewBag.Index = index;
-            Context.ViewBag.Prev = model.Blog.Posts.ElementAt(Math.Max(0, index - pageLength)).Slug;
-            Context.ViewBag.Next = model.Blog.Posts.ElementAt(Math.Min(model.Blog.Posts.Count() - 1, index + pageLength)).Slug;
+            Context.ViewBag.Prev = model.Blog.BaseUri +  model.Blog.Posts.ElementAt(Math.Max(0, index - pageLength)).Slug;
+            Context.ViewBag.Next = model.Blog.BaseUri + model.Blog.Posts.ElementAt(Math.Min(model.Blog.Posts.Count() - 1, index + pageLength)).Slug;
             return View[model];
         }
 
