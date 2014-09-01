@@ -18,6 +18,8 @@ There is no API support. Author your posts in whatever editor you like and store
 
 **Install**
 
+    PM> Install-Package Nancy.Blog
+
 **Example**
 
 **Release Notes**
