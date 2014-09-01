@@ -53,6 +53,7 @@
     <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RssResponse.cs" />
+    <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

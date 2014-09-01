@@ -47,13 +47,18 @@ namespace Nancy.Blog
                     .Select((p, i) => new SyndicationItem(
                         p.Title,
                         p.Html(),
-                        new Uri("http://localhost/Content/Two"),
+                        new Uri(PermaLink(p)),
                         i.ToString(CultureInfo.InvariantCulture),
                         DateTime.UtcNow
                         ))
             };
             feed.Authors.Add(new SyndicationPerson(Author));
             return new RssResponse(feed);
+        }
+
+        public string PermaLink(Post post)
+        {
+            return BaseUri + post.Slug();
         }
     }
 }

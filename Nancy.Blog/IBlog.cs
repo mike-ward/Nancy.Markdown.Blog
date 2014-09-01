@@ -13,5 +13,6 @@ namespace Nancy.Blog
         string Langauge { get; set; }
         IEnumerable<Post> Posts { get; set; }
         RssResponse Rss();
+        string PermaLink(Post post);
     }
 }
