@@ -1,5 +1,7 @@
 ## Nancy.Blog ##
 
+**This is a work in progress**
+
 A Blog engine that uses [Markdown](http://daringfireball.net/projects/markdown/syntax) and [NancyFx](http://NancyFx.org)
 
 Nancy.Blog can integrate with exsiting sites. It's relatively unopinionated about views, paging, etc.
@@ -22,7 +24,13 @@ There is no API support. Author your posts in whatever editor you like and store
 
 **Example**
 
+See the example project.
+
 **Release Notes**
+
+- 0.1, 9/2/2014
+  + Fix how permalinks work
+  + Update example
 
 - 0.1, 9/1/2014
   + Initial release
