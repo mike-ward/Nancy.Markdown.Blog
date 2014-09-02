@@ -6,20 +6,18 @@
   <meta charset="utf-8" />
   <title>Nancy.Blog.Example</title>
   <link href="~/Content/css/pure-min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/vs.min.css">
+  <link href="~/Content/css/highlight-vs.min.css" rel="stylesheet" />
   <link href="~/Content/css/blog.css" rel="stylesheet" />
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
   <div>
-    <h1>@Model.Blog.Title</h1>
+    <h1>@Model.Title</h1>
 
     <section>
-      @foreach (var post in Enumerable.Take(Enumerable.Skip(Model.Blog.Posts, ViewBag.Index), ViewBag.PageLength))
+      @foreach (var post in Enumerable.Take(Enumerable.Skip(Model.Posts, ViewBag.Index), ViewBag.PageLength))
       {
         <article>
-          <h2><a href="@Model.Blog.PermaLink(post)">@post.Title</a></h2>
+          <h2><a href="@post.PermaLink">@post.Title</a></h2>
           <div>
             @Html.Raw(post.Html())
           </div>
@@ -29,5 +27,7 @@
       <p><a href="@ViewBag.Prev">previous</a>  | <a href="@ViewBag.Next">next</a></p>
     </section>
   </div>
+  <script src="~/Content/js/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>

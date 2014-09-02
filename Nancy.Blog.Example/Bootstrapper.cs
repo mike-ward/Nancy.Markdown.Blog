@@ -15,7 +15,7 @@ namespace Nancy.Blog.Example
                 Title = "Sample Blog",
                 Author = "Sample Blog Generator",
                 Description = "Sample Blog Description",
-                BaseUri = new Uri("http://localhost:12116/blog/"),
+                BaseUri = new Uri("http://localhost:12116/blog"),
                 Copyright = "Copyright 2014",
                 Langauge = "en-US"
             };

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO.IsolatedStorage;
 using System.Linq;
 using System.ServiceModel.Syndication;
 
@@ -15,6 +16,7 @@ namespace Nancy.Blog
         public string Copyright { get; set; }
         public string Langauge { get; set; }
         private IEnumerable<Post> _posts;
+        public Func<Post, string> PermaLink { get; set; }
 
         public Blog()
         {
@@ -24,7 +26,8 @@ namespace Nancy.Blog
             BaseUri = new Uri("http://www.example.com");
             Copyright = "Copyright 2014";
             Langauge = "en-US";
-            Posts = new[] {new Post()};
+            PermaLink = post => string.Format("{0}/post/{1}/{2}/{3}/{4}",
+                BaseUri, post.Created.Year, post.Created.Month, post.Created.Day, post.Slug);
         }
 
         public IEnumerable<Post> Posts
@@ -32,6 +35,8 @@ namespace Nancy.Blog
             get { return _posts; }
             set
             {
+                if (BaseUri == null) throw new InvalidOperationException("BaseUri is null");
+                if (PermaLink == null) throw new InvalidOperationException("PermaLink is null");
                 _posts = value.OrderByDescending(p => p.Created).ToArray();
                 foreach (var post in _posts) post.PermaLink = PermaLink(post);
             }
@@ -58,25 +63,6 @@ namespace Nancy.Blog
             };
             feed.Authors.Add(new SyndicationPerson(Author));
             return new RssResponse(feed);
-        }
-
-        public string PermaLink(Post post)
-        {
-            return BaseUri + post.Slug;
-        }
-
-        public Post PostFromSlug(string slug)
-        {
-            return Posts.FirstOrDefault(p => slug.Equals(p.Slug, StringComparison.InvariantCultureIgnoreCase));
-        }
-
-        public int IndexFromSlug(string slug)
-        {
-            var p = Posts
-                .Select((post, index) => new {post, index})
-                .FirstOrDefault(a => slug.Equals(a.post.Slug, StringComparison.InvariantCultureIgnoreCase));
-
-            return (p != null) ? p.index : 0;
         }
     }
 }
