@@ -52,11 +52,11 @@ namespace Nancy.Blog
                 Language = Langauge,
                 Items = Posts
                     .Take(10)
-                    .Select((p, i) => new SyndicationItem(
-                        p.Title,
-                        p.Html(),
-                        new Uri(PermaLink(p)),
-                        i.ToString(CultureInfo.InvariantCulture),
+                    .Select(post => new SyndicationItem(
+                        post.Title,
+                        post.Html(),
+                        new Uri(PermaLink(post)),
+                        post.Slug,
                         DateTime.UtcNow
                         ))
             };
