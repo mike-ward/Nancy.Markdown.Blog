@@ -14,9 +14,9 @@ See the Example project for some ideas on how to use it.
   [PHP Markdown Extras](https://michelf.ca/projects/php-markdown/extra/) (similar to GitHub extras)
 - RSS syndication
 - PermaLinks and Slugs supported
+- Html extensions to inject Markdown
 
 There is no API support. Author your posts in whatever editor you like and store the files however you wish.
-
 
 **Install**
 
