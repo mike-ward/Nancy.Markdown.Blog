@@ -28,6 +28,10 @@ See the example project.
 
 **Release Notes**
 
+- 0.2.1, 9/3/2014
+  + Html helpers to read markdown
+  + Update example
+
 - 0.2.0, 9/2/2014
   + Fix how permalinks work
   + Update example
