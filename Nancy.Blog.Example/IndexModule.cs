@@ -16,6 +16,8 @@ namespace Nancy.Blog.Example
             Get["blog/post/{year:int}/{month:int}/{day:int}/{slug}"] = p => ShowArticle(model, p.year, p.month, p.day, p.slug);
             Get["blog/archive"] = p => ShowArchive(model);
             Get["blog/rss"] = p => model.Blog.Rss();
+
+            Get["/about"] = p => View["about"];
         }
 
         private Negotiator ShowBlog(IndexModel model, int index)

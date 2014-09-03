@@ -1,0 +1,25 @@
+﻿@using Nancy.Blog
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width" />
+  <title>Nancy.Blog.Example - Archive</title>
+  <link href="~/Content/css/pure-min.css" rel="stylesheet" />
+  <link href="~/Content/css/blog.css" rel="stylesheet" />
+</head>
+<body>
+  <div>
+    @Html.Markdown(@"
+## About HTML.Markdown ##
+---
+
+It's easy to include markdown in your other pages.
+
+Who needs HTML?
+    ")
+  </div>
+  <script src="~/Content/js/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

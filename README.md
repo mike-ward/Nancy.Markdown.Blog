@@ -28,9 +28,9 @@ See the example project.
 
 **Release Notes**
 
-- 0.2, 9/2/2014
+- 0.2.0, 9/2/2014
   + Fix how permalinks work
   + Update example
 
-- 0.1, 9/1/2014
+- 0.1.0, 9/1/2014
   + Initial release
