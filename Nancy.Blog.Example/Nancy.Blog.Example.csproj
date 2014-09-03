@@ -79,8 +79,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="IndexModule.cs" />
-    <Compile Include="Models\IndexModel.cs" />
+    <Compile Include="Modules\BlogModule.cs" />
+    <Compile Include="Models\BlogModel.cs" />
+    <Compile Include="Modules\SiteModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -93,6 +94,8 @@
     <Content Include="App_Data\Blog\FifthSamplePost.md" />
     <Content Include="Views\archive.cshtml" />
     <Content Include="Views\about.cshtml" />
+    <Content Include="Views\readme.cshtml" />
+    <Content Include="Content\readme.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

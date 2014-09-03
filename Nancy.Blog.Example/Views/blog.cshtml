@@ -12,7 +12,13 @@
 <body>
   <div>
     <h1>@Model.Title</h1>
-
+    <p>
+      <a href="~/blog">Blog</a> |
+      <a href="~/blog/archive">Archive</a> |
+      <a href="~/readme">Readme</a> |
+      <a href="~/about">About</a> |
+      <a href="~/blog/rss">RSS</a>
+    </p>
     <section>
       @foreach (var post in Enumerable.Take(Enumerable.Skip(Model.Posts, ViewBag.Index), ViewBag.PageLength))
       {

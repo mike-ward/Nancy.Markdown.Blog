@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.ServiceModel.Syndication;
 
@@ -27,6 +26,7 @@ namespace Nancy.Blog
             Langauge = "en-US";
             PermaLink = post => string.Format("{0}/post/{1}/{2}/{3}/{4}",
                 BaseUri, post.Created.Year, post.Created.Month, post.Created.Day, post.Slug);
+            Posts = new[] {new Post {Title = "Sample Post", Text = "Sample Content"}};
         }
 
         public IEnumerable<Post> Posts

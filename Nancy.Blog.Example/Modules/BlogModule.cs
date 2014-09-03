@@ -6,21 +6,18 @@ using Nancy.Responses.Negotiation;
 
 namespace Nancy.Blog.Example
 {
-    public class IndexModule : NancyModule
+    public class BlogModule : NancyModule
     {
-        public IndexModule(IndexModel model)
+        public BlogModule(IBlogModel model)
         {
-            Get["/"] = p => Response.AsRedirect("~/blog");
             Get["blog/"] = p => ShowBlog(model, 0);
             Get["blog/page/{index:int}"] = p => ShowBlog(model, p.index);
             Get["blog/post/{year:int}/{month:int}/{day:int}/{slug}"] = p => ShowArticle(model, p.year, p.month, p.day, p.slug);
             Get["blog/archive"] = p => ShowArchive(model);
             Get["blog/rss"] = p => model.Blog.Rss();
-
-            Get["/about"] = p => View["about"];
         }
 
-        private Negotiator ShowBlog(IndexModel model, int index)
+        private Negotiator ShowBlog(IBlogModel model, int index)
         {
             const int pageLength = 3;
             Context.ViewBag.Index = index;
@@ -31,7 +28,7 @@ namespace Nancy.Blog.Example
             return View[model.Blog];
         }
 
-        private Negotiator ShowArticle(IndexModel model, int year, int month, int day, string slug)
+        private Negotiator ShowArticle(IBlogModel model, int year, int month, int day, string slug)
         {
             const int pageLength = 1;
             Context.ViewBag.PageLength = pageLength;
@@ -53,7 +50,7 @@ namespace Nancy.Blog.Example
             return View[model.Blog];
         }
 
-        private Negotiator ShowArchive(IndexModel model)
+        private Negotiator ShowArchive(IBlogModel model)
         {
             return View["archive", model.Blog.Posts
                 .GroupBy(post => post.Created.Year)

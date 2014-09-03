@@ -1,4 +1,5 @@
-﻿using MarkdownDeep;
+﻿using System.IO;
+using MarkdownDeep;
 using Nancy.ViewEngines.Razor;
 
 namespace Nancy.Blog
@@ -10,6 +11,11 @@ namespace Nancy.Blog
             var md = new Markdown {ExtraMode = true};
             var html = md.Transform(text);
             return new NonEncodedHtmlString(html);
+        }
+
+        public static IHtmlString MarkdownLoad<TModel>(this HtmlHelpers<TModel> helpers, string path)
+        {
+            return helpers.Markdown(File.ReadAllText(path));
         }
     }
 }
