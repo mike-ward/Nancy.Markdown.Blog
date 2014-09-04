@@ -65,7 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Nancy.Blog.nuspec">
+    <None Include="Nancy.Markdown.Blog.nuspec">
       <SubType>Designer</SubType>
     </None>
     <None Include="pack.cmd" />

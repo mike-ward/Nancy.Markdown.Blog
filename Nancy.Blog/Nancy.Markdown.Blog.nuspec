@@ -6,12 +6,12 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <licenseUrl>https://github.com/mike-ward/Nancy.Pile/blob/master/Nancy.Markdown.Blog/license.md</licenseUrl>
+    <licenseUrl>https://github.com/mike-ward/Nancy.Markdown.Blog/blob/master/license.md</licenseUrl>
     <projectUrl>https://github.com/mike-ward/Nancy.Markdown.Blog</projectUrl>
     <iconUrl>http://nancyfx.org/nancy-nuget.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Add HTML Helpers. Update Example site.</releaseNotes>
+    <releaseNotes>Change name to Nancy.Markdown.Blog</releaseNotes>
     <copyright>Copyright 2014, Mike Ward</copyright>
     <tags>Nancy NancyFx</tags>
   </metadata>
