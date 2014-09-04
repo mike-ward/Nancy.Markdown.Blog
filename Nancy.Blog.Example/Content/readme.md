@@ -1,10 +1,10 @@
-﻿## Nancy.Blog ##
+﻿## Nancy.Markdown.Blog ##
 
 **This is a work in progress**
 
-A Blog engine that uses [Markdown](http://daringfireball.net/projects/markdown/syntax) and [NancyFx](http://NancyFx.org)
+A blog engine that uses [Markdown](http://daringfireball.net/projects/markdown/syntax) and [NancyFx](http://NancyFx.org)
 
-Nancy.Blog can integrate with exsiting sites. It's relatively unopinionated about views, paging, etc.
+Nancy.Markdown.Blog can integrate with exsiting sites. It's relatively unopinionated about views, paging, etc.
 
 See the Example project for some ideas on how to use it.
 
@@ -14,19 +14,23 @@ See the Example project for some ideas on how to use it.
   [PHP Markdown Extras](https://michelf.ca/projects/php-markdown/extra/) (similar to GitHub extras)
 - RSS syndication
 - PermaLinks and Slugs supported
+- Html extensions to inject Markdown
 
 There is no API support. Author your posts in whatever editor you like and store the files however you wish.
 
-
 **Install**
 
-    PM> Install-Package Nancy.Blog
+    PM> Install-Package Nancy.Markdown.Blog
 
 **Example**
 
 See the example project.
 
 **Release Notes**
+
+- 0.2.1, 9/3/2014
+  + Html helpers to read markdown
+  + Update example
 
 - 0.2.0, 9/2/2014
   + Fix how permalinks work

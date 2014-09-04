@@ -2,7 +2,7 @@
 using System.Text;
 using System.Xml;
 
-namespace Nancy.Blog
+namespace Nancy.Markdown.Blog
 {
     public class RssResponse : Response
     {

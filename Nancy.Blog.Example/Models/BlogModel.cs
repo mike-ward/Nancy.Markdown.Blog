@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 
-namespace Nancy.Blog.Example.Models
+namespace Nancy.Markdown.Blog.Example.Models
 {
     public interface IBlogModel
     {

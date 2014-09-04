@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Nancy.Blog
+namespace Nancy.Markdown.Blog
 {
     public static class StringExtensions
     {

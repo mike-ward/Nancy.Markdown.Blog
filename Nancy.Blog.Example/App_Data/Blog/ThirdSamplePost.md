@@ -5,7 +5,7 @@ Indent by 4 spaces to show code:
 
     using System.Collections.Generic;
     
-    namespace Nancy.Blog
+    namespace Nancy.Markdown.Blog
     {
         public class Blog : IBlog
         {
@@ -27,7 +27,7 @@ using System.Linq;
 using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
 
-namespace Nancy.Blog.Example
+namespace Nancy.Markdown.Blog.Example
 {
     using Nancy;
 

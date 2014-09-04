@@ -7,8 +7,8 @@
     <ProjectGuid>{F44D2FFA-0EEC-4C57-8757-53190529C24D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nancy.Blog</RootNamespace>
-    <AssemblyName>Nancy.Blog</AssemblyName>
+    <RootNamespace>Nancy.Markdown.Blog</RootNamespace>
+    <AssemblyName>Nancy.Markdown.Blog</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -65,7 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Nancy.Blog.nuspec" />
+    <None Include="Nancy.Blog.nuspec">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="pack.cmd" />
     <None Include="packages.config" />
     <None Include="web.config" />

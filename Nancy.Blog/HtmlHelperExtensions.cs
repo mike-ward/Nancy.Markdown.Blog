@@ -2,13 +2,13 @@
 using MarkdownDeep;
 using Nancy.ViewEngines.Razor;
 
-namespace Nancy.Blog
+namespace Nancy.Markdown.Blog
 {
     public static class HtmlHelperExtensions
     {
         public static IHtmlString Markdown<TModel>(this HtmlHelpers<TModel> helpers, string text)
         {
-            var md = new Markdown {ExtraMode = true};
+            var md = new MarkdownDeep.Markdown {ExtraMode = true};
             var html = md.Transform(text);
             return new NonEncodedHtmlString(html);
         }

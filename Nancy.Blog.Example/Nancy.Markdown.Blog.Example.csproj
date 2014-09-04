@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nancy.Blog.Example</RootNamespace>
-    <AssemblyName>Nancy.Blog.Example</AssemblyName>
+    <RootNamespace>Nancy.Markdown.Blog.Example</RootNamespace>
+    <AssemblyName>Nancy.Markdown.Blog.Example</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -104,9 +104,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nancy.Blog\Nancy.Blog.csproj">
+    <ProjectReference Include="..\Nancy.Blog\Nancy.Markdown.Blog.csproj">
       <Project>{f44d2ffa-0eec-4c57-8757-53190529c24d}</Project>
-      <Name>Nancy.Blog</Name>
+      <Name>Nancy.Markdown.Blog</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

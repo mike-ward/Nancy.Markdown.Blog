@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
-using Nancy.Blog.Example.Models;
+using Nancy.Markdown.Blog.Example.Models;
 using Nancy.Responses.Negotiation;
 
-namespace Nancy.Blog.Example
+namespace Nancy.Markdown.Blog.Example
 {
     public class BlogModule : NancyModule
     {

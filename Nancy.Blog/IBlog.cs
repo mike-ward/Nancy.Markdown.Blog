@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Nancy.Blog
+namespace Nancy.Markdown.Blog
 {
     public interface IBlog
     {

@@ -1,6 +1,4 @@
-﻿using System.Runtime.Remoting.Messaging;
-
-namespace Nancy.Blog.Example.Modules
+﻿namespace Nancy.Markdown.Blog.Example.Modules
 {
     public class SiteModule : NancyModule
     {
