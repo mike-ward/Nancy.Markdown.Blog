@@ -20,13 +20,16 @@ There is no API support. Author your posts in whatever editor you like and store
 
 **Install**
 
-    PM> Install-Package Nancy.Marodown.Blog
+    PM> Install-Package Nancy.Markdown.Blog
 
 **Example**
 
 See the example project.
 
 **Release Notes**
+
+- 0.3.0, 9/3/2014
+  + Change name to Nancy.Blog.Markdown
 
 - 0.2.1, 9/3/2014
   + Html helpers to read markdown
