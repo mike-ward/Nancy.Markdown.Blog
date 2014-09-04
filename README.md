@@ -1,10 +1,10 @@
-## Nancy.Blog ##
+## Nancy.Markdown.Blog ##
 
 **This is a work in progress**
 
-A Blog engine that uses [Markdown](http://daringfireball.net/projects/markdown/syntax) and [NancyFx](http://NancyFx.org)
+A blog engine that uses [Markdown](http://daringfireball.net/projects/markdown/syntax) and [NancyFx](http://NancyFx.org)
 
-Nancy.Blog can integrate with exsiting sites. It's relatively unopinionated about views, paging, etc.
+Nancy.Markdown.Blog can integrate with exsiting sites. It's relatively unopinionated about views, paging, etc.
 
 See the Example project for some ideas on how to use it.
 
