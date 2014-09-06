@@ -1,22 +1,27 @@
 ## Nancy.Markdown.Blog ##
 
-**This is a work in progress**
+[Demo site](http://mike-ward.net)
 
 A blog engine that uses [Markdown](http://daringfireball.net/projects/markdown/syntax) and [NancyFx](http://NancyFx.org)
 
 Nancy.Markdown.Blog can integrate with exsiting sites. It's relatively unopinionated about views, paging, etc.
 
-See the Example project for some ideas on how to use it.
+See the example project for some ideas on how to use it.
 
 **Features**
 
 - Posts are composed in Markdown. The Markdown engine understands 
   [PHP Markdown Extras](https://michelf.ca/projects/php-markdown/extra/) (similar to GitHub extras)
 - RSS syndication
-- PermaLinks and Slugs supported
+- PermaLinks and Slugs
+- Posts with dates in the future not shown
 - Html extensions to inject Markdown
 
-There is no API support. Author your posts in whatever editor you like and store the files however you wish.
+**Not Included**
+
+- Publishing API: Author your posts in whatever editor you like and store the files however you wish.
+- Commenting System: Instead use one of the many online services like [Disqus](https://disqus.com)
+
 
 **Install**
 
@@ -27,6 +32,10 @@ There is no API support. Author your posts in whatever editor you like and store
 See the example project.
 
 **Release Notes**
+
+- 0.3.1, 9/6/2014
+  + Hide posts with future dates
+  + Add filewatcher to example site
 
 - 0.3.0, 9/3/2014
   + Change name to Nancy.Blog.Markdown

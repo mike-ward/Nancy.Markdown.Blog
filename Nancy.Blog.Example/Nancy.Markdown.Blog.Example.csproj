@@ -96,6 +96,7 @@
     <Content Include="Views\about.cshtml" />
     <Content Include="Views\readme.cshtml" />
     <Content Include="Content\readme.md" />
+    <Content Include="App_Data\Blog\BackToTheFuture.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
