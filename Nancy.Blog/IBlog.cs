@@ -12,6 +12,7 @@ namespace Nancy.Markdown.Blog
         string Copyright { get; set; }
         string Langauge { get; set; }
         IEnumerable<Post> Posts { get; set; }
+        IEnumerable<Post> AllPosts { get; }
         RssResponse Rss();
         Func<Post, string> PermaLink { get; set; } 
     }

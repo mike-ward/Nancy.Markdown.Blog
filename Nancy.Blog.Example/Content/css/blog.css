@@ -1,7 +1,9 @@
 ﻿body {
-  width: 980px;
+  width: 800px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.5;
+  font-family: helvetica, sans-serif;
 }
 
 article {
@@ -11,7 +13,7 @@ article {
 
 .hljs {
   background-color: #f6f6f9;
-  font-size: 11pt;
+  font-size: 80%;
 }
 
 

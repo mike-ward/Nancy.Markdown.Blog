@@ -31,7 +31,7 @@ namespace Nancy.Markdown.Blog
 
         public IEnumerable<Post> Posts
         {
-            get { return _posts; }
+            get { return _posts.Where(p => p.Created <= DateTime.Now); }
             set
             {
                 if (BaseUri == null) throw new InvalidOperationException("BaseUri is null");
@@ -39,6 +39,11 @@ namespace Nancy.Markdown.Blog
                 _posts = value.OrderByDescending(p => p.Created).ToArray();
                 foreach (var post in _posts) post.PermaLink = PermaLink(post);
             }
+        }
+
+        public IEnumerable<Post> AllPosts
+        {
+            get { return _posts; }
         }
 
         public RssResponse Rss()

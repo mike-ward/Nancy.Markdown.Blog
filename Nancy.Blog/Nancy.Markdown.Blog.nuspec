@@ -11,7 +11,7 @@
     <iconUrl>http://nancyfx.org/nancy-nuget.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Change name to Nancy.Markdown.Blog</releaseNotes>
+    <releaseNotes>Add future posts feature</releaseNotes>
     <copyright>Copyright 2014, Mike Ward</copyright>
     <tags>Nancy NancyFx</tags>
   </metadata>

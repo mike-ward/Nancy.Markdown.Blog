@@ -11,7 +11,7 @@ namespace Nancy.Markdown.Blog.Example
         public BlogModule(IBlogModel model)
         {
             Get["blog/"] = p => ShowBlog(model, 0);
-            Get["blog/page/{index:int}"] = p => ShowBlog(model, p.index);
+            Get["blog/posts/{index:int}"] = p => ShowBlog(model, p.index);
             Get["blog/post/{year:int}/{month:int}/{day:int}/{slug}"] = p => ShowArticle(model, p.year, p.month, p.day, p.slug);
             Get["blog/archive"] = p => ShowArchive(model);
             Get["blog/rss"] = p => model.Blog.Rss();
@@ -22,7 +22,7 @@ namespace Nancy.Markdown.Blog.Example
             const int pageLength = 3;
             Context.ViewBag.Index = index;
             Context.ViewBag.PageLength = pageLength;
-            Func<int, string> link = p => string.Format("{0}/page/{1}", model.Blog.BaseUri, p);
+            Func<int, string> link = p => string.Format("{0}/posts/{1}", model.Blog.BaseUri, p);
             Context.ViewBag.Prev = link(Math.Max(index - pageLength, 0));
             Context.ViewBag.Next = link(Math.Min(model.Blog.Posts.Count() - 1, index + pageLength));
             return View[model.Blog];
