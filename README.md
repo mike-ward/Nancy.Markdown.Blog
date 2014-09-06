@@ -2,6 +2,8 @@
 
 [Demo site](http://mike-ward.net)
 
+[Documentation](https://github.com/mike-ward/Nancy.Markdown.Blog/wiki)
+
 A blog engine that uses [Markdown](http://daringfireball.net/projects/markdown/syntax) and [NancyFx](http://NancyFx.org)
 
 Nancy.Markdown.Blog can integrate with exsiting sites. It's relatively unopinionated about views, paging, etc.
