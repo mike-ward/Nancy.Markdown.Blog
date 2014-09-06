@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel.Syndication;
+using System.Threading;
 
 namespace Nancy.Markdown.Blog
 {
@@ -36,8 +37,9 @@ namespace Nancy.Markdown.Blog
             {
                 if (BaseUri == null) throw new InvalidOperationException("BaseUri is null");
                 if (PermaLink == null) throw new InvalidOperationException("PermaLink is null");
-                _posts = value.OrderByDescending(p => p.Created).ToArray();
-                foreach (var post in _posts) post.PermaLink = PermaLink(post);
+                var posts = value.OrderByDescending(p => p.Created).ToArray();
+                foreach (var post in posts) post.PermaLink = PermaLink(post);
+                Interlocked.Exchange(ref _posts, posts);
             }
         }
 
