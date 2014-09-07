@@ -35,6 +35,9 @@ See the example project.
 
 **Release Notes**
 
+- 0.4.0
+  + Add better previous/next page handling
+
 - 0.3.1, 9/6/2014
   + Hide posts with future dates
   + Add filewatcher to example site
