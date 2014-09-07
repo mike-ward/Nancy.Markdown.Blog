@@ -1,5 +1,5 @@
-﻿# Title of My First Post
-2014-08-12
+﻿First Sample Post
+2014-07-12
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. 
 Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. 

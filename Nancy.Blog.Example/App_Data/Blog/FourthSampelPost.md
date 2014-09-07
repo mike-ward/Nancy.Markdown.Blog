@@ -1,4 +1,4 @@
-﻿A More Complicated Example
+﻿Fourth Sample Post
 2014-08-20
 
 Welcome to StackEdit!

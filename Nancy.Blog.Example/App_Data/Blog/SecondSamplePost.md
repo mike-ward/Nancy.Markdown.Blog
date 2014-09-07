@@ -1,5 +1,5 @@
-﻿Some Markdown Tests
-2014-08-13
+﻿Second Sample Post
+2014-07-13
 
 ###Sub-heading
 ***

@@ -1,4 +1,4 @@
-﻿# Some Code Examples
+﻿Third Sample Post
 2014-08-18
 
 Indent by 4 spaces to show code:

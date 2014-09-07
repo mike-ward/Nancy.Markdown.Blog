@@ -1,4 +1,4 @@
-﻿Some More Markdown Text
+﻿Fifth Sample Post
 2014-09-02
 
 ### Welcome to MarkdownPad 2 ###
