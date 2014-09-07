@@ -29,8 +29,8 @@ namespace Nancy.Markdown.Blog.Example
             ViewBag.Posts = posts;
             ViewBag.Prev = prev >= 0 ? link(prev) : string.Empty;
             ViewBag.Next = next < model.Blog.Posts.Count() ? link(next) : string.Empty;
-            ViewBag.PrevVisible = string.IsNullOrEmpty(ViewBag.Prev) ? "hidden" : "visible";
-            ViewBag.NextVisible = string.IsNullOrEmpty(ViewBag.Next) ? "hidden" : "visible";
+            ViewBag.PrevVisible = Visibility(ViewBag.Prev);
+            ViewBag.NextVisible = Visibility(ViewBag.Next);
             return View[model.Blog];
         }
 
@@ -50,8 +50,8 @@ namespace Nancy.Markdown.Blog.Example
             ViewBag.Posts = new[] {post};
             ViewBag.Prev = prev != null ? prev.PermaLink : string.Empty;
             ViewBag.Next = next != null ? next.PermaLink : string.Empty;
-            ViewBag.PrevVisible = string.IsNullOrEmpty(ViewBag.Prev) ? "hidden" : "visible";
-            ViewBag.NextVisible = string.IsNullOrEmpty(ViewBag.Next) ? "hidden" : "visible";
+            ViewBag.PrevVisible = Visibility(ViewBag.Prev);
+            ViewBag.NextVisible = Visibility(ViewBag.Next);
             return View[model.Blog];
         }
 
@@ -66,6 +66,11 @@ namespace Nancy.Markdown.Blog.Example
                         mg => CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(mg.Key),
                         mg => mg.OrderByDescending(d => d.Created)))
                 ];
+        }
+
+        private static string Visibility(string link)
+        {
+            return string.IsNullOrEmpty(link) ? "hidden" : "visible";
         }
     }
 }
