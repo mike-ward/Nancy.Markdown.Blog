@@ -11,8 +11,8 @@
     <iconUrl>http://nancyfx.org/nancy-nuget.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Add future posts feature</releaseNotes>
+    <releaseNotes>Improve previous/next page handling</releaseNotes>
     <copyright>Copyright 2014, Mike Ward</copyright>
-    <tags>Nancy NancyFx</tags>
+    <tags>Nancy NancyFx Blog Markdown ASP.NET</tags>
   </metadata>
 </package>
