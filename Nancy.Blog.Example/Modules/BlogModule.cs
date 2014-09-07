@@ -11,42 +11,47 @@ namespace Nancy.Markdown.Blog.Example
         public BlogModule(IBlogModel model)
         {
             Get["blog/"] = p => ShowBlog(model, 0);
-            Get["blog/posts/{index:int}"] = p => ShowBlog(model, p.index);
-            Get["blog/post/{year:int}/{month:int}/{day:int}/{slug}"] = p => ShowArticle(model, p.year, p.month, p.day, p.slug);
+            Get["blog/posts/{index:int}"] = p => ShowBlog(model, p.index) ?? 404;
+            Get["blog/post/{year:int}/{month:int}/{day:int}/{slug}"] = p => ShowArticle(model, p.year, p.month, p.day, p.slug) ?? 404;
             Get["blog/archive"] = p => ShowArchive(model);
             Get["blog/rss"] = p => model.Blog.Rss();
         }
 
         private Negotiator ShowBlog(IBlogModel model, int index)
         {
-            const int pageLength = 3;
-            Context.ViewBag.Index = index;
-            Context.ViewBag.PageLength = pageLength;
+            const int numberOfPosts = 3;
+            var posts = model.Blog.Posts.Skip(index).Take(numberOfPosts);
+            if (!posts.Any()) return null;
             Func<int, string> link = p => string.Format("{0}/posts/{1}", model.Blog.BaseUri, p);
-            Context.ViewBag.Prev = link(Math.Max(index - pageLength, 0));
-            Context.ViewBag.Next = link(Math.Min(model.Blog.Posts.Count() - 1, index + pageLength));
+            ViewBag.Title = model.Blog.Title;
+            Context.ViewBag.Posts = posts;
+            var prev = index - numberOfPosts;
+            var next = index + numberOfPosts;
+            Context.ViewBag.Prev = prev >= 0 ? link(prev) : string.Empty;
+            Context.ViewBag.Next = next < model.Blog.Posts.Count() ? link(next) : string.Empty;
+            Context.ViewBag.PrevVisible = string.IsNullOrEmpty(Context.ViewBag.Prev) ? "hidden" : "visible";
+            Context.ViewBag.NextVisible = string.IsNullOrEmpty(Context.ViewBag.Next) ? "hidden" : "visible";
             return View[model.Blog];
         }
 
         private Negotiator ShowArticle(IBlogModel model, int year, int month, int day, string slug)
         {
-            const int pageLength = 1;
-            Context.ViewBag.PageLength = pageLength;
-
             var post = model.Blog.Posts
-                .Select((p, i) => new {post = p, index = i})
-                .FirstOrDefault(a =>
-                    year == a.post.Created.Year &&
-                    month == a.post.Created.Month &&
-                    day == a.post.Created.Day &&
-                    slug.Equals(a.post.Slug, StringComparison.InvariantCultureIgnoreCase));
+                .FirstOrDefault(p =>
+                    year == p.Created.Year &&
+                    month == p.Created.Month &&
+                    day == p.Created.Day &&
+                    slug.Equals(p.Slug, StringComparison.InvariantCultureIgnoreCase));
 
-            var index = post != null ? post.index : 0;
-            Context.ViewBag.Index = index;
-            var previous = model.Blog.Posts.ElementAt(Math.Max(0, index - pageLength));
-            var next = model.Blog.Posts.ElementAt(Math.Min(model.Blog.Posts.Count() - 1, index + pageLength));
-            Context.ViewBag.Prev = previous.PermaLink;
-            Context.ViewBag.Next = next.PermaLink;
+            if (post == null) return null;
+            var prev = model.Blog.PreviousPost(post);
+            var next = model.Blog.NextPost(post);
+            ViewBag.Title = post.Title;
+            Context.ViewBag.Posts = new[] {post};
+            Context.ViewBag.Prev = prev != null ? prev.PermaLink : string.Empty;
+            Context.ViewBag.Next = next != null ? next.PermaLink : string.Empty;
+            Context.ViewBag.PrevVisible = string.IsNullOrEmpty(Context.ViewBag.Prev) ? "hidden" : "visible";
+            Context.ViewBag.NextVisible = string.IsNullOrEmpty(Context.ViewBag.Next) ? "hidden" : "visible";
             return View[model.Blog];
         }
 

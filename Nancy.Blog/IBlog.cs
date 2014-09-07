@@ -13,6 +13,8 @@ namespace Nancy.Markdown.Blog
         string Langauge { get; set; }
         IEnumerable<Post> Posts { get; set; }
         IEnumerable<Post> AllPosts { get; }
+        Post PreviousPost(Post post);
+        Post NextPost(Post post);
         RssResponse Rss();
         Func<Post, string> PermaLink { get; set; } 
     }

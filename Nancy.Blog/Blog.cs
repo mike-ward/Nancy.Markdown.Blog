@@ -48,6 +48,34 @@ namespace Nancy.Markdown.Blog
             get { return _posts; }
         }
 
+        public Post PreviousPost(Post post)
+        {
+            if (post == null) return null;
+            var posts = Posts;
+            var index = posts.Select((p, i) => new {p, i}).FirstOrDefault(p => p.p.Equals(post)).i;
+            return (index == 0) ? null : GetPost(posts, index -1);
+        }
+
+        public Post NextPost(Post post)
+        {
+            if (post == null) return null;
+            var posts = Posts;
+            var index = posts.Select((p, i) => new { p, i }).FirstOrDefault(p => p.p.Equals(post)).i;
+            return GetPost(posts, index + 1);
+        }
+
+        private static Post GetPost(IEnumerable<Post> posts, int index)
+        {
+            try
+            {
+                return posts.ElementAt(index);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                return null;
+            }
+        }
+
         public RssResponse Rss()
         {
             var feed = new SyndicationFeed

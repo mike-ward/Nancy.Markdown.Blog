@@ -1,10 +1,8 @@
-﻿@using System
-@using System.Linq
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Nancy.Markdown.Blog.Example</title>
+  <title>@ViewBag.Title</title>
   <link href="~/Content/css/pure-min.css" rel="stylesheet" />
   <link href="~/Content/css/highlight-vs.min.css" rel="stylesheet" />
   <link href="~/Content/css/blog.css" rel="stylesheet" />
@@ -20,7 +18,7 @@
       <a href="~/blog/rss">RSS</a>
     </p>
     <section>
-      @foreach (var post in Enumerable.Take(Enumerable.Skip(Model.Posts, ViewBag.Index), ViewBag.PageLength))
+      @foreach (var post in @ViewBag.Posts)
       {
         <article>
           <h2><a href="@post.PermaLink">@post.Title</a></h2>
@@ -30,7 +28,12 @@
           <div class="blog-date">@post.Created.ToString("d MMM yyyy")</div>
         </article>
       }
-      <p><a href="@ViewBag.Prev">previous</a>  | <a href="@ViewBag.Next">next</a></p>
+      <p>
+        <a style="visibility: @ViewBag.PrevVisible" href="@ViewBag.Prev">previous</a>
+        |
+        <a style="visibility: @ViewBag.NextVisible" href="@ViewBag.Next">next</a>
+      </p>
+
     </section>
   </div>
   <script src="~/Content/js/highlight.min.js"></script>
