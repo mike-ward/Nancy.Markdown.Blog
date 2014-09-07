@@ -2,7 +2,7 @@
 
 [Demo site](http://mike-ward.net)
 
-[Documentation](https://github.com/mike-ward/Nancy.Markdown.Blog/wiki)
+[Documentation](https://github.com/mike-ward/Nancy.Markdown.Blog/wiki/About-Nancy.Markdown.Blog)
 
 A blog engine that uses [Markdown](http://daringfireball.net/projects/markdown/syntax) and [NancyFx](http://NancyFx.org)
 
