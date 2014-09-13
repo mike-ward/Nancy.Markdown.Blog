@@ -27,10 +27,11 @@ namespace Nancy.Markdown.Blog.Example
             Func<int, string> link = p => string.Format("{0}/posts/{1}", model.Blog.BaseUri, p);
             ViewBag.Title = model.Blog.Title;
             ViewBag.Posts = posts;
-            ViewBag.Prev = prev >= 0 ? link(prev) : string.Empty;
+            ViewBag.Prev = (prev == 0)
+                ? model.Blog.BaseUri.ToString()
+                : (prev > 0) ? link(prev) : string.Empty;
             ViewBag.Next = next < model.Blog.Posts.Count() ? link(next) : string.Empty;
-            ViewBag.PrevVisible = Visibility(ViewBag.Prev);
-            ViewBag.NextVisible = Visibility(ViewBag.Next);
+            SetCommonBlogProperties(model);
             return View[model.Blog];
         }
 
@@ -50,9 +51,21 @@ namespace Nancy.Markdown.Blog.Example
             ViewBag.Posts = new[] {post};
             ViewBag.Prev = prev != null ? prev.PermaLink : string.Empty;
             ViewBag.Next = next != null ? next.PermaLink : string.Empty;
-            ViewBag.PrevVisible = Visibility(ViewBag.Prev);
-            ViewBag.NextVisible = Visibility(ViewBag.Next);
+            SetCommonBlogProperties(model);
             return View[model.Blog];
+        }
+
+        private void SetCommonBlogProperties(IBlogModel model)
+        {
+            ViewBag.DisablePrev = DisableButton(ViewBag.Prev);
+            ViewBag.DisableNext = DisableButton(ViewBag.Next);
+            ViewBag.RecentPosts = model.Blog.Posts.Take(7);
+            ViewBag.PostCount = model.Blog.Posts.Count().ToString("n0");
+        }
+
+        private static string DisableButton(string link)
+        {
+            return string.IsNullOrEmpty(link) ? "disabled" : "";
         }
 
         private Negotiator ShowArchive(IBlogModel model)

@@ -29,9 +29,8 @@
         </article>
       }
       <p>
-        <a style="visibility: @ViewBag.PrevVisible" href="@ViewBag.Prev">previous</a>
-        |
-        <a style="visibility: @ViewBag.NextVisible" href="@ViewBag.Next">next</a>
+        <button class="pure-button" @ViewBag.DisableNext onclick="location.href='@ViewBag.Next';" style="float:right;">Older &rArr;</button>
+        <button class="pure-button" @ViewBag.DisablePrev onclick="location.href='@ViewBag.Prev';">&lArr; Newer</button>
       </p>
 
     </section>
