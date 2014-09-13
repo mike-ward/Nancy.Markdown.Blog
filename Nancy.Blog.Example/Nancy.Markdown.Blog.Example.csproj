@@ -75,6 +75,7 @@
     <Content Include="Content\css\highlight-vs.min.css" />
     <Content Include="Content\css\pure-min.css" />
     <Content Include="Content\js\highlight.min.js" />
+    <Content Include="Views\archive.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -92,7 +93,6 @@
     <Content Include="App_Data\Blog\ThirdSamplePost.md" />
     <Content Include="App_Data\Blog\FourthSampelPost.md" />
     <Content Include="App_Data\Blog\FifthSamplePost.md" />
-    <Content Include="Views\archive.cshtml" />
     <Content Include="Views\about.cshtml" />
     <Content Include="Views\readme.cshtml" />
     <Content Include="Content\readme.md" />

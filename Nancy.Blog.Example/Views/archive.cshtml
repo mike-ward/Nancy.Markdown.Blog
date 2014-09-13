@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Nancy.Markdown.Blog.Example - Archive</title>
+  <link href="~/Content/css/pure-min.css" rel="stylesheet" />
+  <link href="~/Content/css/blog.css" rel="stylesheet" />
+</head>
+<body>
+  <div>
+    <h1>Archive</h1>
+
+    <section>
+      @foreach (var yearGroup in Model)
+      {
+        <h2>@yearGroup.Key</h2>
+        foreach (var monthGroup in yearGroup.Value)
+        {
+          <p>
+            @foreach (var post in monthGroup.Value)
+            {
+              <div>@post.Created.ToString("MM-dd-yyyy")&nbsp;&nbsp;&nbsp;<a href="@post.PermaLink">@post.Title</a></div>
+            }
+          </p>
+        }
+      }
+    </section>
+  </div>
+</body>
+</html>

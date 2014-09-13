@@ -10,13 +10,15 @@
 <body>
   <div>
     <h1>@Model.Title</h1>
-    <p>
-      <a href="~/blog">Blog</a> |
-      <a href="~/blog/archive">Archive</a> |
-      <a href="~/readme">Readme</a> |
-      <a href="~/about">About</a> |
-      <a href="~/blog/rss">RSS</a>
-    </p>
+    <div class="pure-menu pure-menu-open pure-menu-horizontal">
+      <ul>
+        <li><a href="~/blog">Blog</a></li>
+        <li><a href="~/blog/archive">Archive</a></li>
+        <li><a href="~/readme">Readme</a></li>
+        <li><a href="~/about">About</a></li>
+        <li><a href="~/blog/rss">RSS</a></li>
+      </ul>
+    </div>
     <section>
       @foreach (var post in @ViewBag.Posts)
       {
