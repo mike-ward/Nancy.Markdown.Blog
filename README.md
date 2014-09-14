@@ -4,6 +4,8 @@
 
 [Documentation](https://github.com/mike-ward/Nancy.Markdown.Blog/wiki/About-Nancy.Markdown.Blog)
 
+[![Build status](https://ci.appveyor.com/api/projects/status/cfd6x74actliiurs)](https://ci.appveyor.com/project/mike-ward/nancy-markdown-blog)
+
 A blog engine that uses [Markdown](http://daringfireball.net/projects/markdown/syntax) and [NancyFx](http://NancyFx.org)
 
 Nancy.Markdown.Blog can integrate with exsiting sites. It's relatively unopinionated about views, paging, etc.
