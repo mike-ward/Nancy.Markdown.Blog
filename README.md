@@ -1,10 +1,8 @@
-## Nancy.Markdown.Blog ##
+# Nancy.Markdown.Blog [![Build status](https://ci.appveyor.com/api/projects/status/cfd6x74actliiurs)](https://ci.appveyor.com/project/mike-ward/nancy-markdown-blog)
 
 [Demo site](http://mike-ward.net)
 
 [Documentation](https://github.com/mike-ward/Nancy.Markdown.Blog/wiki/About-Nancy.Markdown.Blog)
-
-[![Build status](https://ci.appveyor.com/api/projects/status/cfd6x74actliiurs)](https://ci.appveyor.com/project/mike-ward/nancy-markdown-blog)
 
 A blog engine that uses [Markdown](http://daringfireball.net/projects/markdown/syntax) and [NancyFx](http://NancyFx.org)
 
@@ -12,7 +10,7 @@ Nancy.Markdown.Blog can integrate with exsiting sites. It's relatively unopinion
 
 See the example project for some ideas on how to use it.
 
-**Features**
+## Features
 
 - Posts are composed in Markdown. The Markdown engine understands 
   [PHP Markdown Extras](https://michelf.ca/projects/php-markdown/extra/) (similar to GitHub extras)
@@ -27,15 +25,15 @@ See the example project for some ideas on how to use it.
 - Commenting System: Instead use one of the many online services like [Disqus](https://disqus.com)
 
 
-**Install**
+## Install
 
     PM> Install-Package Nancy.Markdown.Blog
 
-**Example**
+## Example
 
 See the example project.
 
-**Release Notes**
+## Release Notes
 
 - 0.4.0
   + Add better previous/next page handling
