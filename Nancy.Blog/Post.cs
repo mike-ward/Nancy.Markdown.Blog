@@ -23,9 +23,9 @@ namespace Nancy.Markdown.Blog
             }
         }
 
-        public string Html()
+        public string Html(string baseUri = null)
         {
-            var md = new MarkdownDeep.Markdown {ExtraMode = true};
+            var md = new MarkdownDeep.Markdown {ExtraMode = true, UrlBaseLocation = baseUri};
             return md.Transform(Text);
         }
 
