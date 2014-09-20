@@ -10,7 +10,7 @@
 </head>
 <body>
   <div>
-    @Html.MarkdownLoad(@Model as string + @"Content\readme.md");
+    @Html.MarkdownLoad(@Model as string + @"Content\readme.md", "");
   </div>
   <script src="~/Content/js/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
