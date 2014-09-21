@@ -11,7 +11,7 @@
     <iconUrl>http://nancyfx.org/nancy-nuget.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Add baseUri parameter to resolve relative links.</releaseNotes>
+    <releaseNotes>Cache generated HTML</releaseNotes>
     <copyright>Copyright 2014, Mike Ward</copyright>
     <tags>Nancy NancyFx Blog Markdown ASP.NET</tags>
   </metadata>

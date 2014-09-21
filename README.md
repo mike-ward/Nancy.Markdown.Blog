@@ -35,6 +35,9 @@ See the example project.
 
 ## Release Notes
 
+- 0.4.2
+  + Add caching of generated HTML
+
 - 0.4.1
   + Add baseUri parameter to resolve relative links.
 
